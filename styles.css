@@ -12,10 +12,12 @@ body {
     font-size: 13px;
     font-family: "Manrope", sans-serif;
     background-color: var(--bg-color);
+
+    /* THIS is how to center a div on a page - use flex */
     display: flex;
-    height: 100vh;
-    justify-content: center;
+    height: 100vh; /* for align items to work, you must assign a height - in this case, 100% of the viewport */
     align-items: center;
+    justify-content: center;
 }
 
 .wrapper {
@@ -105,10 +107,22 @@ h1 {
     justify-content: center;
 }
 
-.share-icon img {
+.share-icon i {
     width: 1em;
     height: 1em;
     transform: translateY(-1px);
+    color: var(--text-color-dark);
+}
+
+.share-icon:hover {
+    cursor: pointer; 
+    background-color: var(--text-color-dark);
+}
+
+.share-icon:hover i {
+    mask-size: contain;
+    mask-image: url(./images/icon-share.svg);
+    color: var(--bg-color);
 }
 
 .attribution { 
