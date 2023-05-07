@@ -135,7 +135,7 @@ h1 {
 }
 
 #share-modal {
-    display: none; /* change to display: flex when clicking share button */
+    display: none;
     align-items: center;
     justify-content: center;
     width: 250px;
