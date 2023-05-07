@@ -206,3 +206,82 @@ h1 {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+
+@media (max-width: 750px) {
+    /* body {
+
+    }
+     */
+    .wrapper {
+        width: 325px;
+        height: 515px;
+    }
+    
+    .card {
+        flex-direction: column;
+        overflow: hidden; /* to crop the image overflow, "overflow: hidden" must be given to the PARENT div (which must have defined height and width) */
+    }
+    
+    .main-img {
+        border-radius: 0;
+        transform: translateY(-15px);
+    }
+    
+    .text-half {
+        height: 350px;
+        width: auto;
+        transform: translateY(-50px);
+        padding: 35px;
+        border-radius: 0;
+    }
+    
+    .text-content {
+        width: 265px;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    
+    .text-block {
+        font-size: 13px;
+        padding-right: 22px;
+    }
+    
+    .profile {
+        height: 45px;
+        margin-top: 13px;
+    }
+    
+    .share-icon {
+        right: 0px;
+        z-index: 5;
+    }
+    
+    #share-modal {
+        display: flex; /*none;*/ /* change to display: flex when clicking share button */
+        justify-content: start;
+        padding-left: 38px;
+        width: 330px;
+        height: 72px;
+        border-radius: 0;
+        left: -35px;
+        top: -12px;
+        transform: translate(0);
+        box-shadow: none;
+    }
+    
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+        width: 100vw;
+        position: absolute;
+        bottom: 10px;
+    }
+    
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+    }
+    
+}
