@@ -30,6 +30,8 @@ body {
     height: 100%;
     position: relative;
     display: flex;
+    border-radius: 10px;
+    box-shadow: 10px 15px 25px rgba(83, 99, 120, 0.115);
 }
 
 .main-img {
@@ -105,12 +107,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
 .share-icon i {
     width: 1em;
     height: 1em;
-    transform: translateY(-1px);
     color: var(--text-color-dark);
 }
 
@@ -119,10 +121,78 @@ h1 {
     background-color: var(--text-color-dark);
 }
 
-.share-icon:hover i {
-    mask-size: contain;
-    mask-image: url(./images/icon-share.svg);
+.share-icon:focus {
+    cursor: pointer; 
+    background-color: var(--text-color-dark);
+}
+
+.share-icon:hover i { /* this is how you make something INSIDE a parent element change when you hover over the PARENT ELEMENT but not necessarily the changing element itself */
     color: var(--bg-color);
+}
+
+.share-icon:focus i {
+    color: var(--bg-color);
+}
+
+#share-modal {
+    display: none; /* change to display: flex when clicking share button */
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 55px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--header-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(40%, -150%);
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.22);
+}
+
+/* make the triangle for the modal speechbox using a CSS pseudo-element via ::before and/or ::after */
+#share-modal::before {
+    /* specify no content and no dimensions so border path starts in the middle */
+    content: "";
+    width: 0;
+    height: 0;
+
+    /* allow for positioning */
+    position: absolute;
+    bottom: -17px;
+    right: 45%;
+
+    /* define triangle dimensions via border width and color via one of the border colors (usually top) */
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 18px solid var(--header-color);
+    border-bottom: 0 solid transparent;
+    
+}
+
+.share-txt {
+    color: var(--text-color-light);
+    letter-spacing: 0.35em;
+    margin-right: 1em;
+}
+
+.social-btn {
+    background: none;
+    border: none;
+}
+
+.social-btn i {
+    color: white;
+}
+
+.social-btn:hover i {
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+
+.social-btn:focus i {
+    color: var(--text-color-light);
 }
 
 .attribution { 
